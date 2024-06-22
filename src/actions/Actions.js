@@ -29,3 +29,10 @@ export const decrement = (num) => ({
     type: "DECREMENT",
     payload: num
 });
+
+export const setWeatherData = (data)=> {
+    return {
+        type: "SET_WEATHER_DATA",
+        payload: data
+    }
+}
