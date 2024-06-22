@@ -6,11 +6,12 @@ import {useSelector, useDispatch} from "react-redux";
 
 import { increment,decrement } from './actions/Actions';
 
+import {getchangeNumberState} from "./selectors/Selectors"
 
 
 function App() {
 
-  //Previously we were doing it using state
+  //Previously we were doing it using state 
   /* const [count, setCount] = useState(0);
 
   const incrementMethod= ()=> {
@@ -20,10 +21,10 @@ function App() {
   const decrementMethod= ()=> {
     setCount(prev => prev - 1);
   } */
-  const counter=useSelector((state)=> state.changeTheNumber);
+  const counter=useSelector(getchangeNumberState);
 
   const dispatch =useDispatch();
-
+  
   const incrementHandler= ()=> {
     dispatch(increment());
   }
@@ -35,15 +36,15 @@ function App() {
 
 
   return (
-      <>
-        <h1>Learning Redux</h1>
+    <>
+    <h1>Learning Redux</h1>
 
-        <div>
-          <button onClick={decrementHandler}>-</button>
-          Current Counter Value : {counter}
-          <button onClick={incrementHandler}>+</button>
-        </div>
-      </>
+    <div>
+    <button onClick={decrementHandler}>-</button>
+    Current Counter Value : {counter}
+    <button onClick={incrementHandler}>+</button>
+    </div>
+    </>
   )
 }
 

@@ -15,8 +15,4 @@ export const increment = createAction("INCREMENT")
  * Creates an action to decrement the counter.
  * @returns {Object} An action object with a type of "DECREMENT".
  */
-export const decrement = () => {
-    return {
-        type: "DECREMENT"
-    };
-};
+export const decrement = createAction("DECREMENT")

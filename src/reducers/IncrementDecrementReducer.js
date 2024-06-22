@@ -5,7 +5,7 @@ import { increment,decrement } from "../actions/Actions";
 
 
 //Old way 
- const initialState = 0;
+/* const initialState = 0;
 
 const changeTheNumber = (state=initialState,action) =>{
     switch(action.type){
@@ -16,6 +16,17 @@ const changeTheNumber = (state=initialState,action) =>{
     }
 } 
     
-export default changeTheNumber;
+export default changeTheNumber; */
 
 
+const initialState = 0;
+
+const updateState=handleActions(
+    {
+        [increment] : (state) => state + 1,
+        [decrement] : (state) => state - 1
+    },
+    initialState
+)
+
+export default updateState;
