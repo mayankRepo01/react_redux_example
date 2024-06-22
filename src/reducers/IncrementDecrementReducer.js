@@ -23,7 +23,7 @@ const initialState = 0;
 
 const updateState=handleActions(
     {
-        [increment] : (state) => state + 1,
+        [increment] : (state,action) => state + action.payload,
         [decrement] : (state) => state - 1
     },
     initialState

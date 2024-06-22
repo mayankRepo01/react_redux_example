@@ -9,10 +9,23 @@ import { createAction } from 'redux-actions';
  * Creates an action to increment the counter.
  * @returns {Object} An action object with a type of "INCREMENT".
  */
-export const increment = createAction("INCREMENT")
+
+// createAction is a function that takes two arguments: the first argument is the type of the action, and the second argument is a function that returns the payload of the action.
+/*
+{ type: 'INCREMENT', payload: 10 }.
+ */
+
+//Automated way of creating payload
+
+export const increment = createAction("INCREMENT", (payload) => payload );
 
 /**
  * Creates an action to decrement the counter.
  * @returns {Object} An action object with a type of "DECREMENT".
  */
-export const decrement = createAction("DECREMENT")
+
+//Manual way of creating action
+export const decrement = (num) => ({
+    type: "DECREMENT",
+    payload: num
+});

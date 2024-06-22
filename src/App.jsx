@@ -26,7 +26,7 @@ function App() {
   const dispatch =useDispatch();
   
   const incrementHandler= ()=> {
-    dispatch(increment());
+    dispatch(increment(10));
   }
 
   const decrementHandler= ()=> {
