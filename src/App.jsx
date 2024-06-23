@@ -24,6 +24,8 @@ function App() {
   const counter=useSelector(getchangeNumberState);
   const wdata= useSelector((state) => state.weather);
 
+  const usersData= useSelector((state) => state.usersState.users);
+
   const dispatch =useDispatch();
   
   const incrementHandler= ()=> {
@@ -50,7 +52,6 @@ function App() {
   }
 
   useEffect(fetchWeatherDetails, []);
-  console.log("Weather Data",wdata);
   return (
       <>
         <h1>Learning Redux</h1>
@@ -66,6 +67,15 @@ function App() {
 
           {wdata.location && wdata.location.name}
         </p>
+
+        <h2>Display User data</h2>
+         <div>
+             {usersData.map((user)=> {
+             return <p key={user.id}>{user.name}</p>
+           })}
+         </div>
+
+        <button onClick={()=> dispatch({type: "FETCH_USER_DATA"})}>Fetch_User_Data</button>
       </>
   )
 }

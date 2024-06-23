@@ -36,3 +36,7 @@ export const setWeatherData = (data)=> {
         payload: data
     }
 }
+
+
+export const fetchUserData= createAction("FETCH_USER_DATA");
+export const fetchUserDataSuccess= createAction("FETCH_USER_DATA_SUCCESS");
